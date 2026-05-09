@@ -1,0 +1,32 @@
+[
+  {
+    "date": "Oct 15",
+    "withoutIntervention": 312,
+    "withCropClear": 214
+  },
+  {
+    "date": "Oct 22",
+    "withoutIntervention": 401,
+    "withCropClear": 268
+  },
+  {
+    "date": "Oct 29",
+    "withoutIntervention": 487,
+    "withCropClear": 312
+  },
+  {
+    "date": "Nov 5",
+    "withoutIntervention": 452,
+    "withCropClear": 298
+  },
+  {
+    "date": "Nov 12",
+    "withoutIntervention": 395,
+    "withCropClear": 245
+  },
+  {
+    "date": "Nov 19",
+    "withoutIntervention": 338,
+    "withCropClear": 219
+  }
+]

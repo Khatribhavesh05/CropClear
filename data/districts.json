@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Ludhiana",
+    "state": "Punjab",
+    "coordinates": [
+      30.9,
+      75.8
+    ],
+    "risk": 91,
+    "fires": 234
+  },
+  {
+    "name": "Amritsar",
+    "state": "Punjab",
+    "coordinates": [
+      31.6,
+      74.8
+    ],
+    "risk": 87,
+    "fires": 198
+  },
+  {
+    "name": "Patiala",
+    "state": "Punjab",
+    "coordinates": [
+      30.3,
+      76.4
+    ],
+    "risk": 78,
+    "fires": 167
+  },
+  {
+    "name": "Bathinda",
+    "state": "Punjab",
+    "coordinates": [
+      30.2,
+      74.9
+    ],
+    "risk": 94,
+    "fires": 289
+  },
+  {
+    "name": "Jalandhar",
+    "state": "Punjab",
+    "coordinates": [
+      31.3,
+      75.6
+    ],
+    "risk": 72,
+    "fires": 143
+  },
+  {
+    "name": "Sangrur",
+    "state": "Punjab",
+    "coordinates": [
+      30.2,
+      75.8
+    ],
+    "risk": 88,
+    "fires": 201
+  },
+  {
+    "name": "Moga",
+    "state": "Punjab",
+    "coordinates": [
+      30.8,
+      75.2
+    ],
+    "risk": 65,
+    "fires": 112
+  },
+  {
+    "name": "Fatehgarh Sahib",
+    "state": "Punjab",
+    "coordinates": [
+      30.6,
+      76.4
+    ],
+    "risk": 71,
+    "fires": 134
+  },
+  {
+    "name": "Firozpur",
+    "state": "Punjab",
+    "coordinates": [
+      30.9,
+      74.6
+    ],
+    "risk": 83,
+    "fires": 178
+  },
+  {
+    "name": "Karnal",
+    "state": "Haryana",
+    "coordinates": [
+      29.7,
+      76.9
+    ],
+    "risk": 76,
+    "fires": 156
+  },
+  {
+    "name": "Kurukshetra",
+    "state": "Haryana",
+    "coordinates": [
+      29.9,
+      76.8
+    ],
+    "risk": 82,
+    "fires": 187
+  },
+  {
+    "name": "Ambala",
+    "state": "Haryana",
+    "coordinates": [
+      30.4,
+      76.8
+    ],
+    "risk": 69,
+    "fires": 121
+  },
+  {
+    "name": "Kaithal",
+    "state": "Haryana",
+    "coordinates": [
+      29.8,
+      76.4
+    ],
+    "risk": 79,
+    "fires": 164
+  },
+  {
+    "name": "Jind",
+    "state": "Haryana",
+    "coordinates": [
+      29.3,
+      76.3
+    ],
+    "risk": 73,
+    "fires": 148
+  },
+  {
+    "name": "Fatehabad",
+    "state": "Haryana",
+    "coordinates": [
+      29.5,
+      75.5
+    ],
+    "risk": 86,
+    "fires": 193
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 /Users/bhavesh/.claude/skills/ui-ux-pro-max/scripts/search.py \"cinematic landing page agricultural climate tech dark dramatic\" --design-system -p \"CropClear\" -f markdown)",
+      "Bash(find /Users/bhavesh/Desktop -maxdepth 3 -name \"page.tsx\" 2>/dev/null | head -20 && echo \"---\" && ls /Users/bhavesh/Desktop/ 2>/dev/null)",
+      "Read(//Users/bhavesh/Desktop/**)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3001)",
+      "Bash(curl -s http://localhost:3001/login)"
+    ],
+    "additionalDirectories": [
+      "/Users/bhavesh/Desktop/CropClear /app"
+    ]
+  }
+}
