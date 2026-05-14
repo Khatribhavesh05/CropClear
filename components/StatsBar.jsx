@@ -5,34 +5,35 @@ import { Line, LineChart, ResponsiveContainer } from "recharts";
 
 function useCountUp(target, duration, resetKey) {
   const [value, setValue] = useState(0);
-
   useEffect(() => {
     let frame = 0;
     const start = performance.now();
-
     const step = (now) => {
       const progress = Math.min((now - start) / duration, 1);
-      setValue(Math.round(target * progress));
-      if (progress < 1) {
-        frame = requestAnimationFrame(step);
-      }
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setValue(Math.round(target * eased));
+      if (progress < 1) frame = requestAnimationFrame(step);
     };
-
     frame = requestAnimationFrame(step);
     return () => cancelAnimationFrame(frame);
   }, [target, duration, resetKey]);
-
   return value;
 }
 
-function Sparkline({ data, accent }) {
+function Sparkline({ data, color }) {
   const chartData = useMemo(() => data.map((value, index) => ({ index, value })), [data]);
-
   return (
-    <div className="h-11 w-full">
+    <div className="h-9 w-full">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={chartData}>
-          <Line type="monotone" dataKey="value" stroke={accent} strokeWidth={2.2} dot={false} animationDuration={800} />
+          <Line
+            type="monotone"
+            dataKey="value"
+            stroke={color}
+            strokeWidth={2}
+            dot={false}
+            animationDuration={900}
+          />
         </LineChart>
       </ResponsiveContainer>
     </div>
@@ -40,26 +41,27 @@ function Sparkline({ data, accent }) {
 }
 
 function StatCard({ stat, resetKey }) {
-  const value = useCountUp(stat.value, 1500, resetKey);
+  const value = useCountUp(stat.value, 1400, resetKey);
 
   return (
-    <div className="mission-card rounded-[24px] border border-[var(--border)] bg-[rgba(19,31,23,0.92)] p-4 transition duration-200 hover:translate-y-[-2px] xl:p-5">
-      <div className="flex items-start justify-between gap-3">
-        <div>
-          <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
-            <span className="text-base">{stat.icon}</span>
-            <span>{stat.label}</span>
-          </div>
-          <div className="mt-2 font-display text-3xl tracking-[-0.04em]" style={{ color: stat.accent }}>
-            {value.toLocaleString()}
-          </div>
+    <div className="group rounded-xl border border-line bg-card p-4 transition-colors duration-200 hover:border-line-strong">
+      <div className="flex items-start justify-between gap-2">
+        <div className="font-sans text-xs font-medium uppercase tracking-[0.18em] text-ink-secondary">
+          {stat.label}
         </div>
-        <div className="rounded-full border border-[rgba(255,255,255,0.05)] px-2 py-1 text-[10px] uppercase tracking-[0.22em] text-[var(--text-secondary)]">
-          Live
+        <div className="flex items-center gap-1 rounded-md border border-line px-1.5 py-0.5">
+          <span className="h-1.5 w-1.5 rounded-full" style={{ background: stat.accent }} />
+          <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-ink-muted">Live</span>
         </div>
       </div>
-      <div className="mt-4 rounded-2xl border border-[rgba(30,58,40,0.4)] bg-[rgba(10,15,13,0.55)] px-2 py-1">
-        <Sparkline data={stat.sparkline} accent={stat.accent} />
+      <div
+        className="mt-2 font-display text-3xl font-bold tracking-tight"
+        style={{ color: stat.accent }}
+      >
+        {value.toLocaleString()}
+      </div>
+      <div className="mt-3">
+        <Sparkline data={stat.sparkline} color={stat.accent} />
       </div>
     </div>
   );
@@ -67,7 +69,7 @@ function StatCard({ stat, resetKey }) {
 
 export default function StatsBar({ stats, resetKey }) {
   return (
-    <section className="grid gap-4 xl:grid-cols-4">
+    <section className="grid grid-cols-2 gap-3 xl:grid-cols-4">
       {stats.map((stat) => (
         <StatCard key={stat.label} stat={stat} resetKey={resetKey} />
       ))}

@@ -1,32 +1,39 @@
 import "./globals.css";
 import "leaflet/dist/leaflet.css";
 
-import { DM_Sans, Space_Mono } from "next/font/google";
+import { Inter, Barlow_Condensed, JetBrains_Mono } from "next/font/google";
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-sans",
   display: "swap",
 });
 
-const spaceMono = Space_Mono({
+const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-display",
   display: "swap",
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
 export const metadata = {
-  title: "CropClear",
+  title: "CropClear — Crop Burning Prevention System",
   description:
-    "AI-powered crop stubble burn prediction and intervention system for Punjab and Haryana.",
+    "Satellite-powered crop stubble burn prediction and WhatsApp intervention platform for Punjab and Haryana.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${dmSans.variable} ${spaceMono.variable} bg-[var(--bg-primary)] text-[var(--text-primary)] antialiased`}
+        className={`${inter.variable} ${barlowCondensed.variable} ${jetbrainsMono.variable} bg-base text-ink-primary antialiased`}
       >
         {children}
       </body>
